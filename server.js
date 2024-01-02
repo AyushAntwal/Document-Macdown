@@ -31,12 +31,10 @@ function updateFileData() {
 
 updateFileData();
 
-setInterval(() => {
   fs.watch(dirPath, (eventType, filename) => {
     log(`event type is: ${eventType} : ${filename}`);
     updateFileData();
   });
-}, 10000);
 
 const getMataData = (data) => {
   const lines = data.split("\n");
